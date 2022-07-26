@@ -1,3 +1,4 @@
+![cover](https://user-images.githubusercontent.com/33999466/180988596-7b6a199f-148c-471b-828d-c1bc702728a8.jpg)
 
 # Alexa Virtual Assistant in Python
 
@@ -10,7 +11,7 @@ Things that this program can do are listed below,
  * IP Address 
  * Open Youtube
  * Open Google
- * Play videos on youtube
+ * Play videos on Youtube
  * Search on Web
 
   
