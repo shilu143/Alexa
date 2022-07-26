@@ -1,5 +1,5 @@
 
-# Alexa Virtual Assitant in Python
+# Alexa Virtual Assistant in Python
 
 This is a virtual assistant built in python which can do certain operations using the voice command given to it.
 
