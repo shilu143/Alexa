@@ -49,5 +49,5 @@ Launch
   
   * #### Email Sending ####
       Have to add the receiver's email id (in the code line 168) <br />
-      Have to add you email id and password (int the code line 69 & 70)
+      Have to add you email id and password (in the code line 69 & 70)
 
