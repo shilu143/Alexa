@@ -40,7 +40,7 @@ def currWeather():
     g = geocoder.ip('me')
     lat = str(g.latlng[0])
     lon = str(g.latlng[1])
-    apiKey = "920f29efb70eadb7f5d5efa8977112d2"
+    apiKey = "920f29efb70eadb7f5d5efa8977112d2"             
 
     api_url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat
     api_url += "&lon="
@@ -66,8 +66,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("your email", "your password")
-    server.sendmail('your email', to, content)
+    server.login("your email", "your password")     #   Enter your email address and password to use the email functionality
+    server.sendmail('your email', to, content)      #   Enter your email
     server.close()
 
 
@@ -152,8 +152,8 @@ if __name__ == "__main__":
             speak("what message should i send")
             msg = takeCommand().lower()
             speak("ok sending message")
-            kit.sendwhatmsg("+917970807875",
-                            "this is testing protocol", hour, minute)
+            kit.sendwhatmsg("+91xxxxxxxxxx",
+                            msg, hour, minute) # Provide the number over here whom you want to send message
             exit()
         elif ("youtube" in query) and ("play" in query):
             speak("What should i play on youtube")
@@ -165,7 +165,7 @@ if __name__ == "__main__":
             try:
                 speak("what should i send?")
                 content = takeCommand().lower()
-                to = 'receiver email'
+                to = 'receiver email'       # Provide the receiver's email over here
                 sendEmail(to, content)
                 speak(f"Email has been sent to {to}")
                 exit()
