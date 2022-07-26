@@ -3,6 +3,15 @@
 
 This is a virtual assistant built in python which can do certain operations using the voice command given to it.
 
+Things that this program can do are listed below,
+ * Current weather of the current location
+ * Open Command prompt
+ * Open Visual Studio Code
+ * IP Address 
+ * Open Youtube
+ * Open Google
+ * Play videos on youtube
+ * Search on Web
 
   
 ## Run Locally
@@ -29,11 +38,19 @@ Launch
 ```bash
   python alexa.py
 ```
+<br />
+<br />
 
+### For some of the functionalities, you have to provide some information in the code, ###
+  * #### Whatsapp message sending ####
+      Have to add the number whom you want to send the message(in the code line 155) <br />
+      and also you should be logged in Whatsapp web
   
+  * #### Email Sending ####
+      Have to add the receiver's email id (in the code line 168) <br />
+      Have to add you email id and password (int the code line 69 & 70)
 
 
-
-
+<br /><br />
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/shilu143/Alexa/blob/main/LICENSE)
 
