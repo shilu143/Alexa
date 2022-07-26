@@ -9,6 +9,8 @@ import webbrowser
 import pywhatkit as kit
 import smtplib
 import sys
+import geocoder
+
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -32,6 +34,32 @@ def wish():
     else:
         speak("Good Evening")
     speak("I'am Alexa, how can I help you.")
+
+
+def currWeather():
+    g = geocoder.ip('me')
+    lat = str(g.latlng[0])
+    lon = str(g.latlng[1])
+    apiKey = "920f29efb70eadb7f5d5efa8977112d2"
+
+    api_url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat
+    api_url += "&lon="
+    api_url += lon
+    api_url += "&units=metric&appid="
+    api_url += apiKey
+    response = get(api_url)
+
+    x = response.json()
+    if x["cod"] != "404":
+        y = x["main"]
+        currLocation = str(x["name"])
+        currTemperature = str(y["temp"])
+        z = x["weather"]
+        weatherDescription = str(z[0]["description"])
+        spch = f"Its currently {currTemperature} degree celsius and {weatherDescription} in {currLocation}"
+        speak(spch)
+    else:
+        speak("Sorry, Some error occurred")
 
 
 def sendEmail(to, content):
@@ -95,7 +123,9 @@ if __name__ == "__main__":
         #     cap.release()
         #     cv2.destroyAllWindows()
         #     exit()
-
+        elif "current weather" in query:
+            currWeather()
+            exit() 
         elif "ip address" in query:
             ip = get('https://api.ipify.org').text
             speak(f"Your IP address is {ip}")
